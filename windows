@@ -1,0 +1,2 @@
+netstat -ano|findstr "PID :59799"
+taskkill /pid 13208 /f

@@ -1,0 +1,131 @@
+
+ use testmaru
+> db
+> show dbs
+> db.coins.insert({"name":"somthing", "edad":"dd"})
+WriteResult({ "nInserted" : 1 })
+> db.createCollection("productos")
+{ "ok" : 1 }
+> show collections
+coins
+productos
+> db.producto.drop()
+false
+> show collections
+coins
+productos
+>
+> db.productos.drop()
+true
+> show collections
+coins
+>
+> db.createCollection("productos")
+{ "ok" : 1 }
+> db.dropDatabase()
+{ "dropped" : "testmaru", "ok" : 1 }
+> show collections
+> show dbs
+admin   0.000GB
+config  0.000GB
+local   0.000GB
+
+> use testmongomaru
+switched to db testmongomaru
+> db
+testmongomaru
+> db.coins.insert({"name":"somthing", "edad":"dd"})
+WriteResult({ "nInserted" : 1 })
+> db.coins.insert({"name":"somthing", "edad":"dd"})
+WriteResult({ "nInserted" : 1 })
+> db.coins.insert({"name":"somthing", "edad":"dd"})
+WriteResult({ "nInserted" : 1 })
+
+> db.coins.find()
+{ "_id" : ObjectId("5e486860c327f010f8ba32d3"), "name" : "somthing", "edad" : "dd" }
+{ "_id" : ObjectId("5e486868c327f010f8ba32d4"), "name" : "somthing", "edad" : "dd" }
+{ "_id" : ObjectId("5e486869c327f010f8ba32d5"), "name" : "somthing", "edad" : "dd" }
+>
+> db.coins.find().pretty()
+{
+        "_id" : ObjectId("5e486860c327f010f8ba32d3"),
+        "name" : "somthing",
+        "edad" : "dd"
+}
+{
+        "_id" : ObjectId("5e486868c327f010f8ba32d4"),
+        "name" : "somthing",
+        "edad" : "dd"
+}
+{
+        "_id" : ObjectId("5e486869c327f010f8ba32d5"),
+        "name" : "somthing",
+        "edad" : "dd"
+}
+>
+> db.coins.update({"edad":"dd"},{$set:{"name":345}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+>
+> db.coins.find().pretty()
+{
+        "_id" : ObjectId("5e486860c327f010f8ba32d3"),
+        "name" : 345,
+        "edad" : "dd"
+}
+{
+        "_id" : ObjectId("5e486868c327f010f8ba32d4"),
+        "name" : "somthing",
+        "edad" : "dd"
+}
+{
+        "_id" : ObjectId("5e486869c327f010f8ba32d5"),
+        "name" : "somthing",
+        "edad" : "dd"
+}
+> db.coins.deleteOne({"edad":"dd"})
+{ "acknowledged" : true, "deletedCount" : 1 }
+> db.coins.find().pretty()
+{
+        "_id" : ObjectId("5e486868c327f010f8ba32d4"),
+        "name" : "somthing",
+        "edad" : "dd"
+}
+{
+        "_id" : ObjectId("5e486869c327f010f8ba32d5"),
+        "name" : "somthing",
+        "edad" : "dd"
+}
+> db.coins.deleteOne({"edad":"dd"})
+{ "acknowledged" : true, "deletedCount" : 1 }
+>
+>
+> db.coins.find().pretty()
+{
+        "_id" : ObjectId("5e486869c327f010f8ba32d5"),
+        "name" : "somthing",
+        "edad" : "dd"
+}
+> db.coins.find({"edad":"dd"})
+{ "_id" : ObjectId("5e486869c327f010f8ba32d5"), "name" : "somthing", "edad" : "dd" }
+> db.coins.find({"edad":"dd"}).limit(1)
+{ "_id" : ObjectId("5e486869c327f010f8ba32d5"), "name" : "somthing", "edad" : "dd" }
+> db.coins.find({"edad":"dd"}).sort({valor:1})
+{ "_id" : ObjectId("5e486869c327f010f8ba32d5"), "name" : "somthing", "edad" : "dd" }
+> db.coins.find({"edad":"dd"}).sort({valor:-1})
+{ "_id" : ObjectId("5e486869c327f010f8ba32d5"), "name" : "somthing", "edad" : "dd" }
+>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,32 @@
+checkstyle
+./mvnw clean site
+./mvnw clean site-deploy no funca
+./mvnw checkstyle:check
+
+pmd
+./mvnw clean site
+./mvnw pmd:check
+
+spotsbug
+./mvnw compile site
+./mvnw spotbugs:check
+./mvnw spotbugs:gui
+
+jacoco-maven-plugin
+./mvnw clean test 
+
+sonar
+./mvnw sonar:sonar -Dsonar.host.url=http://localhost:9000 
+
+
+./mvnw help:describe -DgroupId=org.springframework.boot  -DartifactId=spring-boot-maven-plugin   -Ddetail=true
+./mvnw help:describe -DgroupId=org.apache.maven.plugins  -DartifactId=maven-checkstyle-plugin   -Ddetail=true
+./mvnw help:describe -DgroupId=org.jacoco  -DartifactId=jacoco-maven-plugin   -Ddetail=true
+
+show dependencies
+./mvnw dependency:tree
+
+configurar TLSv1.2 para versiones viejas de java
+mvn -Dhttps.protocols=TLSv1.2 install
+
+
