@@ -23,6 +23,8 @@ sonar
 ./mvnw help:describe -DgroupId=org.apache.maven.plugins  -DartifactId=maven-checkstyle-plugin   -Ddetail=true
 ./mvnw help:describe -DgroupId=org.jacoco  -DartifactId=jacoco-maven-plugin   -Ddetail=true
 
+./mvnw help:describe -DgroupId=org.apache.maven.plugins  -DartifactId=maven-surefire-plugin  -Ddetail=true
+
 show dependencies
 ./mvnw dependency:tree
 

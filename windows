@@ -1,2 +1,15 @@
 netstat -ano|findstr "PID :59799"
 taskkill /pid 13208 /f
+
+power shell
+Get-service | Where-Object {$_.Status -eq "Running"}
+Stop-service nameService
+
+Some name services
+Hamachi2Svc
+MySQL80
+MongoDB
+pgagent-pg12
+postgresql-x64-12
+RabbitMQ
+TeamViewer
