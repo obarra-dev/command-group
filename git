@@ -1,0 +1,17 @@
+git diff
+git diff file
+
+git log
+git log myfile
+
+//quien cuando se cambio
+git blame myfile
+
+//mostrar los cambios locales en relacion al remoto
+git reflog
+
+git reset --hard
+git reset myfile
+
+git checkout -b newbrach
+git checkout otherbranch

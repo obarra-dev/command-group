@@ -1,17 +1,17 @@
 heroku login
 
 to create a new app in heroku
-herou create miapp
+heroku create miapp-inheroku
 
 to create a bd
 heroku addons:create heroku-posgresql:hobby-dev
 
 link repository to app in heroku
-heroku git:remote -a miapp-heroku
+heroku git:remote -a miapp-inheroku
 
 git push heroku master
 
-heroku run some-script
+
 
 generate token in heroku
 heroku auth:token
@@ -19,4 +19,6 @@ heroku authorizations:create
 
 heroku open
 heroku logs --tail
+
+heroku run some-script
 heroku run bash
