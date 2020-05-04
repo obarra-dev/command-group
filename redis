@@ -1,0 +1,36 @@
+set mykey myvalue
+get mykey
+
+lpush mylist omar
+
+lrange mylist 0 9
+
+sadd myset omar
+smembers myset
+
+zadd myzet 1 omar
+zrange myzet 0 10 withscores
+
+hmset book name mybook id 123
+hget book id
+hget book name
+hmset book size 55
+hget book size
+hgetall book
+
+keys *
+del mykey
+
+set mycounter 0
+decr mycounter
+incr mycounter
+
+mset ka valuea kb valueb
+mget ka kb
+
+exists kb
+
+expire kb 10
+set  mykeyex mar ex 15
+ttl mykeyex
+clear
