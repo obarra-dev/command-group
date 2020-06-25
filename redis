@@ -1,20 +1,41 @@
 set mykey myvalue
 get mykey
 
+##lists
 lpush mylist omar
-
+rpush mylist barra
+rpush mylist a  b c d 
 lrange mylist 0 9
+lrange mylist 0 -1
+#stack
+rpop mylist
+lpop myslit
+lrange mylist 
+ltrim mylist 2 5
+#espear 5 seg
+blpop myllist 5
+brpop mylist 5
 
 sadd myset omar
+spop myset 
 smembers myset
+sadd tags:java 4
+sadd tags:java 5
+sadd tags:javascript 5
+
+sinter tags:java tags:javascript
+sunionstore tagsunidos  tags:java tags:javascript
 
 zadd myzet 1 omar
 zrange myzet 0 10 withscores
 
+#hash
 hmset book name mybook id 123
+hmset book size 55
+hmget book name size id
 hget book id
 hget book name
-hmset book size 55
+hset book size 12
 hget book size
 hgetall book
 
