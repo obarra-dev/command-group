@@ -1,0 +1,16 @@
+ docker pull mysql
+ 
+ docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql:latest
+ 
+ 
+ ## ejecutar comandos  en tu mysql
+ docker exec -it some-mysql bash
+ 
+ # para logearse
+ mysql -uroot -p
+ 
+ # para ver las bases
+ show databases;
+ 
+ ## para ver logs
+ docker logs some-mysql
