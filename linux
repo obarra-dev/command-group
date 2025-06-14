@@ -33,8 +33,16 @@ curl -I http://localhost:5432
 ## Screen-based text editor (insert mode= i, normal mode = ESC, command mode = :q, :q!, :w, :wq, :x)
 vim myfile.txt
 
+## Create nested directories (with -p):
+mkdir -p parent_directory/child_directory
+
+##Force delete without confirmation (with -f):
+rm -rf unwanted_directory
+
 ## change mode 
 chmod 777 file.txt //full permissions
 chmod 755 file1.sh // good for script, owner rwx, group and other rx
 chmod 644 file.txt // default for text, owner rw, group and other r
 chmod 600 private.txt // only owner can read and write
+
+
