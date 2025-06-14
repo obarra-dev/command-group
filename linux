@@ -1,0 +1,40 @@
+# Linux commands https://www.youtube.com/watch?v=CLh2ACdXNbc
+
+## prints basic info about OS
+uname
+
+## prints current working directory
+pwd
+
+## list to display the contents of a directory 
+ls -la
+
+## display content of files or concatenate two files
+cat myfirstfile.txt mysecond.txt > merge.txt
+
+## global regular expression print
+cat somelog.txt | grep database > somedatabaselog.txt
+
+## copy files or directories
+cp databaselog.txt /root/db_log.txt
+
+## word count, -l: count lines -w: count words
+cat somelog.txt | grep database | wc -l
+
+## search for files and directories, by name, type, size, permission [where to start to search] [option] [regular exp]
+find / -name "*.conf"
+
+## compare 2 files
+diff file1 file2
+
+## stands for Client URL
+curl -I http://localhost:5432
+
+## Screen-based text editor (insert mode= i, normal mode = ESC, command mode = :q, :q!, :w, :wq, :x)
+vim myfile.txt
+
+## change mode 
+chmod 777 file.txt //full permissions
+chmod 755 file1.sh // good for script, owner rwx, group and other rx
+chmod 644 file.txt // default for text, owner rw, group and other r
+chmod 600 private.txt // only owner can read and write
