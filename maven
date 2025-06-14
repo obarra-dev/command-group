@@ -31,4 +31,10 @@ show dependencies
 configurar TLSv1.2 para versiones viejas de java
 mvn -Dhttps.protocols=TLSv1.2 install
 
+spotless
+mvn spotless:apply
+mvn spotless:check
+
+
+mvn clean install -T 1C -DskipTests  -Dmaven.build.cache.enabled=false 
 
