@@ -1,0 +1,7 @@
+
+
+go version
+go mod init example/hello
+go run .
+# run all unit tests
+go test 
